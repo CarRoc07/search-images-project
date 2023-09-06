@@ -46,9 +46,9 @@ export const ImgProvider: React.FC <ImgProviderProps>= ({ children }) => {
 
     useEffect(() => {
         if (searchValue) {
-            fetchData(`/search/photos?page=1&query=${searchValue}&client_id=2fdpJDwv_CLQZkxAHhAb16SYrTt-GJ02TH-KyeDJGto`)
+            fetchData(`/search/photos?page=1&query=${searchValue}&client_id=${process.env.NEXT_PUBLIC_KEY}`)
         } else {
-            fetchData('/search/photos?page=1&query=cats&client_id=2fdpJDwv_CLQZkxAHhAb16SYrTt-GJ02TH-KyeDJGto')
+            fetchData(`/search/photos?page=1&query=cats&client_id=${process.env.NEXT_PUBLIC_KEY}`)
         }
       // eslint-disable-next-line react-hooks/exhaustive-deps 
     }, [])
